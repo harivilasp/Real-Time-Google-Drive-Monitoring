@@ -1,0 +1,20 @@
+const exportFile = async (fileId, mimeType) => {
+  const drive = google.drive({ version: "v3", auth: oauth2Client });
+  const res = await drive.files.export({
+    fileId: fileId,
+    mimeType: mimeType,
+  });
+  return res.data;
+};
+
+const fileId = "GOOGLE_DOCS_FILE_ID";
+const mimeType = "application/pdf";
+
+exportFile(fileId, mimeType)
+  .then((data) => {
+    fs.writeFileSync("exported_file.pdf", data, "binary");
+    console.log("File exported successfully!");
+  })
+  .catch((err) => {
+    console.error("Error exporting file:", err);
+  });
