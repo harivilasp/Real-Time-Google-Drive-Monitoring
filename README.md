@@ -1,4 +1,4 @@
-Before testing, make sure your server is running by executing node app.js or whatever your entry file is named.
+Before testing, make sure your server is running by executing node app.js
 
 1. Testing Authentication
    First, navigate to http://localhost:3000/auth in your web browser. This should redirect you to Google's OAuth 2.0 authentication flow.
