@@ -39,8 +39,6 @@ app.get("/auth", (req, res) => {
 });
 
 // Handle the OAuth 2.0 server response
-
-// Modify your OAuth2 callback to store tokens after successful authentication
 app.get("/oauth2callback", async (req, res) => {
   const { code } = req.query;
   try {
